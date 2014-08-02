@@ -2,7 +2,7 @@
 begin
   require "juicer/merger/javascript_merger"
 rescue LoadError => err
-  puts "Install juicer ruby gem to build Sinon.JS. Try `gem install juicer`."
+  puts "Install juicer ruby gem to build SinonES6.JS. Try `gem install juicer`."
   if !defined?(Gem)
     puts "RubyGems is not loaded. Perhaps that is why juicer can not be found?"
   end
@@ -18,10 +18,10 @@ def add_license(file, version)
   File.open(file, "w") do |f|
     f.puts <<PREAMBLE
 /**
- * Sinon.JS #{version}, #{Time.now.strftime("%Y/%m/%d")}
+ * SinonES6.JS #{version}, #{Time.now.strftime("%Y/%m/%d")}
  *
  * @author Christian Johansen (christian@cjohansen.no)
- * @author Contributors: https://github.com/cjohansen/Sinon.JS/blob/master/AUTHORS
+ * @author Contributors: https://github.com/ingameio/SinonES6.JS/blob/master/AUTHORS
  *
  * #{File.read("LICENSE").split("\n").join("\n * ")}
  */
@@ -92,5 +92,5 @@ Dir.chdir(File.dirname(__FILE__)) do
   FileUtils.cp(output, 'pkg/sinon.js')
   FileUtils.cp("pkg/sinon-ie#{version_string}.js", 'pkg/sinon-ie.js')
 
-  puts "Built Sinon.JS #{version}"
+  puts "Built SinonES6.JS #{version}"
 end

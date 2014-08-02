@@ -1,24 +1,25 @@
 {
-  "name": "sinon",
-  "description": "JavaScript test spies, stubs and mocks.",
-  "version": "1.10.3",
+  "name": "sinon-es6",
+  "description": "JavaScript test spies, stubs and mocks for ES6.",
+  "keywords": [ "sinon", "es6", "harmony", "generators", "ecma 6", "ecmascript 6" ],
+  "version": "0.0.1",
   "homepage": "http://cjohansen.no/sinon/",
-  "author": "Christian Johansen",
+  "author": "Gonzalo Aguirre",
   "repository": {
     "type": "git",
-    "url": "http://github.com/cjohansen/Sinon.JS.git"
+    "url": "http://github.com/ingameio/SinonES6.JS.git"
   },
   "bugs": {
-    "mail": "christian@cjohansen.no",
-    "url": "http://github.com/cjohansen/Sinon.JS/issues"
+    "mail": "gonzalo@ingame.io",
+    "url": "http://github.com/ingameio/SinonES6.JS/issues"
   },
   "licenses": [
     { "type": "BSD",
-      "url": "http://github.com/cjohansen/Sinon.JS/blob/master/LICENSE"
+      "url": "http://github.com/ingameio/SinonES6.JS/blob/master/LICENSE"
     }
   ],
   "scripts": {
-    "test": "node test/node/run.js",
+    "test": "node --harmony test/node/run.js",
     "prepublish": "./build"
   },
   "dependencies": {
@@ -34,5 +35,5 @@
     "http-server": "*"
   },
   "main": "./lib/sinon.js",
-  "engines": { "node": ">=0.1.103" }
+  "engines": { "node": ">=0.11" }
 }

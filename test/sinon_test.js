@@ -17,7 +17,8 @@ buster.testCase("sinon", {
     ".wrapMethod": {
         setUp: function () {
             this.method = function () {};
-            this.object = { method: this.method };
+            this.generator = function* () {};
+            this.object = { method: this.method, generator: this.generator };
         },
 
         "is function": function () {
@@ -76,6 +77,12 @@ buster.testCase("sinon", {
 
             refute.same(this.method, this.object.method);
             assert.isFunction(this.object.method);
+        },
+
+        "replaces object generator": function () {
+            sinon.wrapMethod(this.object, "generator", function* () {});
+            refute.same(this.generator, this.object.generator);
+            assert.isFunction(this.object.generator);
         },
 
         "throws if method is already wrapped": function () {
