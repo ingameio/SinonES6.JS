@@ -85,6 +85,12 @@ buster.testCase("sinon", {
             assert.isFunction(this.object.generator);
         },
 
+        "replaces object generator with another syntax": function () {
+            sinon.wrapMethod(this.object, "generator", function * () {});
+            refute.same(this.generator, this.object.generator);
+            assert.isFunction(this.object.generator);
+        },
+
         "throws if method is already wrapped": function () {
             var object = { method: function () {} };
             sinon.wrapMethod(object, "method", function () {});
